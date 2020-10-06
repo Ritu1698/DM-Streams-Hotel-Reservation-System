@@ -28,6 +28,7 @@ public class HotelManagementSystemTest {
         Assert.assertEquals("Ridgewood",name);
 
     }
+
     @Test
     public void givenCalculatePrice_whenWeekEndRates_shouldReturn160() throws ParseException {
 
@@ -40,6 +41,30 @@ public class HotelManagementSystemTest {
         Assert.assertEquals(160, result);
     }
 
+    @Test
+    public void givenCalculatePrice_whenWeekEndAndWeekDayRates_shouldReturn200() throws ParseException {
+
+        ArrayList<String> dates = new ArrayList<>();
+
+        dates.add("5/10/2020");
+        dates.add("4/10/2020");
+        int result = h2.calculatePrice(dates, 0);
+
+        Assert.assertEquals(200, result);
+    }
+
+    @Test
+    public void givenCalculatePrice_whenWeekEndAndWeekDayRates_shouldReturn160() throws ParseException {
+
+        ArrayList<String> dates = new ArrayList<>();
+
+        dates.add("5/10/2020");
+        dates.add("4/10/2020");
+        int result = h2.calculatePrice(dates, 1);
+
+        Assert.assertNotEquals(161, result);
+        Assert.assertNotEquals(159, result);
+    }
 
 
 
