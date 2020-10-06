@@ -28,7 +28,6 @@ public class HotelManagementSystemTest {
         Assert.assertEquals("Ridgewood",name);
 
     }
-
     @Test
     public void givenCalculatePrice_whenWeekEndRates_shouldReturn160() throws ParseException {
 
@@ -52,7 +51,6 @@ public class HotelManagementSystemTest {
 
         Assert.assertEquals(200, result);
     }
-
     @Test
     public void givenCalculatePrice_whenWeekEndAndWeekDayRates_shouldReturn160() throws ParseException {
 
@@ -65,6 +63,53 @@ public class HotelManagementSystemTest {
         Assert.assertNotEquals(161, result);
         Assert.assertNotEquals(159, result);
     }
+    @Test
+    public void givenFindCheapestHotel_whenLoyalCustomer_shouldReturnLakewood() throws ParseException {
+
+        ArrayList<String> dates=new ArrayList<>();
+        dates.add("5/10/2020");
+        dates.add("6/10/2020");
+        h1.calculatePrice(dates,1);
+        h2.calculatePrice(dates,1);
+        h3.calculatePrice(dates,1);
+        String name=h1.findCheapestHotel();
+        Assert.assertNotEquals("Bridgewood",name);
+        Assert.assertNotEquals("Ridgewood",name);
+
+
+
+    }
+    @Test
+    public void givenFindCheapestHotel_whenRegularCustomer_shouldReturnLakewood() throws ParseException {
+
+        ArrayList<String> dates=new ArrayList<>();
+        dates.add("5/10/2020");
+        dates.add("6/10/2020");
+        h1.calculatePrice(dates,0);
+        h2.calculatePrice(dates,0);
+        h3.calculatePrice(dates,0);
+        String name=h1.findCheapestHotel();
+        Assert.assertEquals("Lakewood",name);
+
+
+
+    }
+    @Test
+    public void givenFindCheapestHotel_whenLoyalCustomer_shouldReturnHighestRatedHotel() throws ParseException {
+
+        ArrayList<String> dates=new ArrayList<>();
+        dates.add("4/10/2020");
+        dates.add("5/10/2020");
+        h1.calculatePrice(dates,0);
+        h2.calculatePrice(dates,0);
+        h3.calculatePrice(dates,0);
+        String name=h1.findCheapestHotel();
+        Assert.assertEquals("Bridgewood",name);
+
+
+
+    }
+
 
 
 
