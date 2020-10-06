@@ -117,6 +117,7 @@ public class HotelManagementSystem {
         dates.add("12/9/2020");
 
         System.out.println("Enter whether a Loyalty Customer or Not\n0 for NO 1 for YES: ");
+
         Scanner s= new Scanner(System.in);
 
         rewardCustomerOrRegular=s.nextInt();
