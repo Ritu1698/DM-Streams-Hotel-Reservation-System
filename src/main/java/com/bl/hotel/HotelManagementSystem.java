@@ -98,6 +98,11 @@ public class HotelManagementSystem {
         return cheapestMostRatedHotelName;
     }
 
+    public String bestRatedHotel() {
+        String maxRate = hotelNameAndRatingMap.entrySet().stream().max(Map.Entry.comparingByValue()).get().getKey();
+        return maxRate;
+    }
+
     public static void main(String[] args) throws ParseException{
 
         int rewardCustomerOrRegular;
@@ -120,7 +125,9 @@ public class HotelManagementSystem {
         h2.calculatePrice(dates,rewardCustomerOrRegular);
         h3.calculatePrice(dates,rewardCustomerOrRegular);
         String cheapestHotelGivenDates = h1.findCheapestHotel();
+        String bestRatedHotelGivenDates = h1.bestRatedHotel();
         System.out.println("\nCheapest hotel: "+cheapestHotelGivenDates);
+        System.out.println("\nBest Rated hotel: "+bestRatedHotelGivenDates);
     }
 
 
