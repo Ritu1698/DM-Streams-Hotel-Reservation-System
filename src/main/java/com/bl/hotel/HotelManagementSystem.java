@@ -101,7 +101,6 @@ public class HotelManagementSystem {
     public static void main(String[] args) throws ParseException{
 
         int rewardCustomerOrRegular;
-
         System.out.println("Welcome to Hostel Reservation Program in Hotel Management Class");
 
         HotelManagementSystem h2= new HotelManagementSystem(3,"Lakewood",110,90, 80,80);

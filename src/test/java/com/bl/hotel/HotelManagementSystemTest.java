@@ -27,9 +27,20 @@ public class HotelManagementSystemTest {
         String name=h1.findCheapestHotel();
         Assert.assertEquals("Ridgewood",name);
 
-
-
     }
+    @Test
+    public void givenCalculatePrice_whenWeekEndRates_shouldReturn160() throws ParseException {
+
+        ArrayList<String> dates = new ArrayList<>();
+
+        dates.add("3/10/2020");
+        dates.add("4/10/2020");
+        int result = h1.calculatePrice(dates, 1);
+
+        Assert.assertEquals(160, result);
+    }
+
+
 
 
 
