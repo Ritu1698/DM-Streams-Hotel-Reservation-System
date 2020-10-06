@@ -86,6 +86,9 @@ public class HotelManagementSystem {
         }
         System.out.println("All the cheapest Hotels List with minimum cost "+minCost+"-\n"+cheapHotels);
 
+        List<Map.Entry<String, Integer>> cheapHotelsUsingStream = new ArrayList<>();
+        cheapHotelsUsingStream = hotelNameAndCostMap.entrySet().stream().filter(s-> s.getValue()<=hotelNameAndCostMap.entrySet().stream().min(Map.Entry.comparingByValue()).get().getValue()).collect(Collectors.toList());
+
         String cheapestMostRatedHotelName = "";
         cheapestMostRatedHotelName = hotelNameAndRatingMap.entrySet()
                 .stream()
