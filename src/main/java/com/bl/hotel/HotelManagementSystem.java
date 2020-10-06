@@ -85,10 +85,8 @@ public class HotelManagementSystem {
             }
         }
         System.out.println("All the cheapest Hotels List with minimum cost "+minCost+"-\n"+cheapHotels);
-        int maxRating = -1;
+
         String cheapestMostRatedHotelName = "";
-
-
         cheapestMostRatedHotelName = hotelNameAndRatingMap.entrySet()
                 .stream()
                 .filter(s -> cheapHotels.contains(s.getKey()))
