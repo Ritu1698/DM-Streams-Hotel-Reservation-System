@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bl.hotel.HotelManagementSystemTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-06T13:09:52" hostname="LAPTOP-RGI87V6B" time="0.032">
+  <properties/>
+  <testcase name="givenFindCheapestHotel_whenCustomer_shouldReturnLakewood" classname="com.bl.hotel.HotelManagementSystemTest" time="0.032"/>
+  <system-out><![CDATA[Hotels in HashMap-
+{Ridgewood=590, Bridgewood=350, Lakewood=310}
+
+All the cheapest Hotels List with minimum cost 310-
+[Lakewood]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
