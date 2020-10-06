@@ -109,7 +109,39 @@ public class HotelManagementSystemTest {
 
 
     }
+    @Test
+    public void givenFindCheapestHotel_whenRegularCustomer_shouldReturnLakewoodName() throws ParseException {
 
+        ArrayList<String> dates=new ArrayList<>();
+        dates.add("4/10/2020");
+        dates.add("5/10/2020");
+        dates.add("6/10/2020");
+        h1.calculatePrice(dates,0);
+        h2.calculatePrice(dates,0);
+        h3.calculatePrice(dates,0);
+        String name=h1.findCheapestHotel();
+        Assert.assertEquals("Lakewood",name);
+        Assert.assertNotEquals("Lakewod",name);
+        Assert.assertNotEquals("lakewood",name);
+
+
+
+    }
+
+    @Test
+    public void givenFindBestRatedHotel_whenRegularCustomer_shouldReturnRidgewood() throws ParseException {
+
+        ArrayList<String> dates=new ArrayList<>();
+        dates.add("4/10/2020");
+        dates.add("5/10/2020");
+        dates.add("6/10/2020");
+        h1.calculatePrice(dates,0);
+        h2.calculatePrice(dates,0);
+        h3.calculatePrice(dates,0);
+        String name=h1.bestRatedHotel();
+        Assert.assertEquals("Ridgewood",name);
+
+    }
 
 
 
