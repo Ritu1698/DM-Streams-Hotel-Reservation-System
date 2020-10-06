@@ -87,13 +87,12 @@ public class HotelManagementSystem {
         System.out.println("All the cheapest Hotels List with minimum cost "+minCost+"-\n"+cheapHotels);
         int maxRating = -1;
         String cheapestMostRatedHotelName = "";
-        for (int i = 0; i < cheapHotels.size(); i++){
 
-            if(hotelNameAndRatingMap.get(cheapHotels.get(i))>maxRating) {
-                maxRating = hotelNameAndRatingMap.get(cheapHotels.get(i));
-                cheapestMostRatedHotelName = cheapHotels.get(i);
-            }
-        }
+
+        cheapestMostRatedHotelName = hotelNameAndRatingMap.entrySet()
+                .stream()
+                .filter(s -> cheapHotels.contains(s.getKey()))
+                .max(Map.Entry.comparingByValue()).get().getKey();
 
         return cheapestMostRatedHotelName;
     }
