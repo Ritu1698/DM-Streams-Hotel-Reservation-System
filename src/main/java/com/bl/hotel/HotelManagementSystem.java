@@ -108,32 +108,6 @@ public class HotelManagementSystem {
 
     //Main Function
     public static void main(String[] args) throws ParseException {
-
-        int rewardCustomerOrRegular;
         System.out.println("Welcome to Hostel Reservation Program in Hotel Management Class");
-
-        HotelManagementSystem h2 = new HotelManagementSystem(3, "Lakewood", 110, 90, 80, 80);
-        HotelManagementSystem h1 = new HotelManagementSystem(4, "Bridgewood", 150, 50, 110, 50);
-        HotelManagementSystem h3 = new HotelManagementSystem(5, "Ridgewood", 220, 150, 100, 20);
-
-        ArrayList<String> dates = new ArrayList<>();
-        dates.add("11/9/2020");
-        dates.add("12/9/2020");
-
-        System.out.println("Enter whether a Loyalty Customer or Not\n0 for NO 1 for YES: ");
-
-        Scanner s = new Scanner(System.in);
-
-        rewardCustomerOrRegular = s.nextInt();
-
-        h1.calculatePrice(dates, rewardCustomerOrRegular);
-        h2.calculatePrice(dates, rewardCustomerOrRegular);
-        h3.calculatePrice(dates, rewardCustomerOrRegular);
-        String cheapestHotelGivenDates = h1.findCheapestHotel();
-        String bestRatedHotelGivenDates = h1.bestRatedHotel();
-        System.out.println("\nCheapest hotel: " + cheapestHotelGivenDates);
-        System.out.println("\nBest Rated hotel: " + bestRatedHotelGivenDates);
     }
-
-
 }
