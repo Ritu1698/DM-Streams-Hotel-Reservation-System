@@ -74,9 +74,6 @@ public class HotelManagementSystem {
 
     //Function to Find The Cheapest Hotel
     public String findCheapestHotel() {
-
-        System.out.println("Hotels in HashMap-\n" + hotelNameAndCostMap + "\n");
-
         Integer minCost = hotelNameAndCostMap.entrySet().stream().min(Map.Entry.comparingByValue()).get().getValue();
         ArrayList<String> cheapHotels = new ArrayList<>();
         for (Map.Entry<String, Integer> entry : hotelNameAndCostMap.entrySet()) {

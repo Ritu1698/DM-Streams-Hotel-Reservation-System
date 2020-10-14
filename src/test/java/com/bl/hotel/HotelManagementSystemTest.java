@@ -115,21 +115,6 @@ public class HotelManagementSystemTest {
     }
 
     @Test
-    public void givenFindBestRatedHotel_whenRegularCustomer_shouldReturnRidgewood() throws ParseException {
-
-        ArrayList<String> dates = new ArrayList<>();
-        dates.add("4/10/2020");
-        dates.add("5/10/2020");
-        dates.add("6/10/2020");
-        h1.calculatePrice(dates, 0);
-        h2.calculatePrice(dates, 0);
-        h3.calculatePrice(dates, 0);
-        String name = h1.bestRatedHotel();
-        Assert.assertEquals("Ridgewood", name);
-
-    }
-
-    @Test
     public void givenFindCheapestHotel_whenLoyalCustomer_shouldReturnLakewood() throws ParseException {
 
         ArrayList<String> dates = new ArrayList<>();
@@ -142,6 +127,34 @@ public class HotelManagementSystemTest {
         Assert.assertNotEquals("Bridgewood", name);
         Assert.assertNotEquals("Ridgewood", name);
 
+
+    }
+
+    @Test
+    public void givenFindCheapestBestRatedHotel_whenRegularCustomer_shouldReturnBridgewood() throws ParseException {
+
+        ArrayList<String> dates = new ArrayList<>();
+        dates.add("11/9/2020");
+        dates.add("12/9/2020");
+        h1.calculatePrice(dates, 0);
+        h2.calculatePrice(dates, 0);
+        h3.calculatePrice(dates, 0);
+        String name = h1.findCheapestHotel();
+        Assert.assertEquals("Bridgewood", name);
+
+    }
+
+    @Test
+    public void givenFindBestRatedHotel_whenRegularCustomer_shouldReturnRidgewood() throws ParseException {
+
+        ArrayList<String> dates = new ArrayList<>();
+        dates.add("11/9/2020");
+        dates.add("12/9/2020");
+        h1.calculatePrice(dates, 0);
+        h2.calculatePrice(dates, 0);
+        h3.calculatePrice(dates, 0);
+        String bestRatedHotelGivenDates = h1.bestRatedHotel();
+        Assert.assertEquals("Ridgewood", bestRatedHotelGivenDates);
 
     }
 

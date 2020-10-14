@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bl.hotel.HotelManagementSystemTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-13T14:51:18" hostname="LAPTOP-RGI87V6B" time="0.004">
+<testsuite name="com.bl.hotel.HotelManagementSystemTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-10-14T03:04:07" hostname="LAPTOP-RGI87V6B" time="0.021">
   <properties/>
-  <testcase name="givenCalculatePrice_whenWeekEndAndWeekDayRates_shouldReturn160" classname="com.bl.hotel.HotelManagementSystemTest" time="0.004"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="givenFindCheapestBestRatedHotel_whenRegularCustomer_shouldReturnBridgewood" classname="com.bl.hotel.HotelManagementSystemTest" time="0.021"/>
+  <system-out><![CDATA[All the cheapest Hotels List with minimum cost 200-
+[Bridgewood, Lakewood]
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
