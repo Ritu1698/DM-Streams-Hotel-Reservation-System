@@ -1,4 +1,4 @@
-package com.bl.hotel;
+package com.bridgelabz.hotelmanagementsystem;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -40,8 +40,7 @@ public class HotelManagementSystem {
         SimpleDateFormat format1 = new SimpleDateFormat("dd/MM/yyyy");
         Date dt1 = format1.parse(date);
         DateFormat format2 = new SimpleDateFormat("EE");
-        String finalDay = format2.format(dt1);
-        return finalDay;
+        return format2.format(dt1);
     }
 
     //Function to Calculate Total Cost Of A Hotel Given Dates List
@@ -86,7 +85,9 @@ public class HotelManagementSystem {
         System.out.println("All the cheapest Hotels List with minimum cost " + minCost + "-\n" + cheapHotels);
 
         List<Map.Entry<String, Integer>> cheapHotelsUsingStream = new ArrayList<>();
-        cheapHotelsUsingStream = hotelNameAndCostMap.entrySet().stream().filter(s -> s.getValue() <= hotelNameAndCostMap.entrySet().stream().min(Map.Entry.comparingByValue()).get().getValue()).collect(Collectors.toList());
+        cheapHotelsUsingStream = hotelNameAndCostMap.entrySet().stream()
+                .filter(s -> s.getValue() <= hotelNameAndCostMap.entrySet().stream().min(Map.Entry.comparingByValue()).get().getValue())
+                .collect(Collectors.toList());
 
         String cheapestMostRatedHotelName = "";
         cheapestMostRatedHotelName = hotelNameAndRatingMap.entrySet()
@@ -104,7 +105,7 @@ public class HotelManagementSystem {
     }
 
     //Main Function
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) {
         System.out.println("Welcome to Hostel Reservation Program in Hotel Management Class");
     }
 }

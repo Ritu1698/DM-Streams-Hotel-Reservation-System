@@ -1,4 +1,4 @@
-package com.bl.hotel;
+package com.bridgelabz.hotelmanagementsystem;
 
 import org.junit.Assert;
 import org.junit.Test;
